@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Check what was/is/will be day on your birthday!</h1>
+	FirstName : <input  id="first">
+	LastName : <input  id="last">
+	<p>BirthDate information : </p>
+	YYYY-MM-DD : <input  id="year">
+	<button onclick="myfunction()">Check the day!</button>
+	<h5>Result is : </h5>
+	<p id="here"></p>
+	
+</body>
+
+<script type="text/javascript">
+
+function myfunction(){
+		var person = {first:"",last:"",year:"",date:""};
+		person.first = document.getElementById("first").value;
+		person.last = document.getElementById("last").value;
+		person.year = document.getElementById("year").value;
+
+		
+		var d= new Date(person.year);
+		var days = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+		
+		if(typeof (days[d.getDay()]) == "undefined"){
+			alert("Plese give correct input!");
+			location.reload();
+			return false;			
+		}
+		else{
+		document.getElementById("here").innerHTML = person.first +" "+ person.last +" has birthday on " + days[d.getDay()]+"..";
+		}
+}
+</script>
+</html>

@@ -1,0 +1,46 @@
+
+<!-- String validation! -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Conditions</title>
+
+<script type="text/javascript">
+	var txt;
+	function capcha() {
+
+		txt = " ";
+		var i;
+		for (i = 0; i < 5; i++) {
+			txt += Math.floor((Math.random() * 100) + 1) + " ";
+		}
+		document.getElementById("here").innerHTML = txt;
+	}
+
+	function check() {
+		var x = document.getElementById("input").value;
+		x = " " + x + " "; //to compensare spaces!!
+		// 		alert(x);
+		// 		alert(x.localeCompare(txt));
+
+		if (!(x.localeCompare(txt))) {
+			document.write("Attempt is successful!");
+		} else {
+			alert("invalid capcha entered!");
+			return false;
+		}
+	}
+</script>
+</head>
+<body>
+	<h1>Validation through random string generator!</h1>
+	<h4 id="here" onclick="capcha()">Click here to generate Capcha
+		code!</h4>
+	Enter :
+	<input id="input">
+	<button onclick="check()">Click!</button>
+	<p id="result"></p>
+</body>
+</html>

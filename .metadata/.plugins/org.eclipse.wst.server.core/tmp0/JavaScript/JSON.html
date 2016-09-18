@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<title>JSON example!</title>
+<body>
+	<h1>Enter from any of the below given subjects to check
+		description!</h1>
+
+	<ul>
+		<li>cmpe200</li>
+		<li>cmpe208</li>
+		<li>cmpe273</li>
+	</ul>
+
+	Input your name to check :
+	<input id="in" type="text">
+	<button onclick="myFunction()">Click!</button>
+	<p id="result"></p>
+
+
+	<div id="here"></div>
+
+	<script type="text/javascript">
+		var subject = '{"info":['
+				+ '{"subject":"cmpe208","text":"Network Architecture and Protocols"},'
+				+ '{"subject":"cmpe200","text":"Computer Architecture"},'
+				+ '{"subject":"cmpe273","text":"Enterprise Distributed Systems" }]}';
+
+		var obj = JSON.parse(subject);
+
+		function myFunction() {
+			var x = document.getElementById("result");
+			var input = document.getElementById("in").value;
+			var i;
+			var flag = false;
+			for (i in obj.info) {
+				// 		alert(obj.info[i].subject);
+				if (input == obj.info[i].subject) {
+					x.innerHTML = obj.info[i].text;
+					flag = true;
+					break;
+				}
+			}
+
+			if (!flag) {
+				x.innerHTML = "sorry not in records!";
+			}
+
+		}
+	</script>
+
+
+</body>
+</html>
+

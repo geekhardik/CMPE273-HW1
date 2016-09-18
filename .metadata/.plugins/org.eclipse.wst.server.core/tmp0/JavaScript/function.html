@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Example of BMI function</title>
+</head>
+<body>
+	<h1>Check your BMI index!</h1>
+	Height in Inches : <input id="height" /><br>
+	Weight in Pounds : <input id="weight" /> <br>
+	<button onclick="BMI()">Get BMI!</button>
+	<p id="here"></p> 
+	<p id="suggestion"></p>
+
+</body>
+
+<script type="text/javascript">
+function BMI(){
+	var height,weight;
+	var bmi;
+	height = Number(document.getElementById('height').value);
+	weight = Number(document.getElementById('weight').value);
+	
+	//Error handling
+	
+	if(isNaN(height) || isNaN(weight)|| height == null || weight == null || height == "" || weight == ""){
+		//document.getElementById('here').innerHTML = "Please check your input!";
+		//document.getElementById('suggestion').innerHTML = "none";
+		alert("invalid input!");
+		location.reload();
+		return false;
+	}
+	else{
+		//multiplying weight by 0.45 to convert it in Kgs.
+		weight = weight*0.45;
+		
+		//myltiply height by 0.025 to convert in inches
+		height = height*0.025;
+		
+		//square the height
+		height = height*height;
+		
+		//get bmi
+		bmi = weight / height;
+	
+		//display the answer!
+		document.getElementById('here').innerHTML = "Your BMI is : " + bmi.toFixed(2);
+		
+		if(Math.ceil(bmi)>=19 && Math.ceil(bmi)<=25){
+			document.getElementById('suggestion').innerHTML = "You are healthy!";
+		}
+		else{
+			document.getElementById('suggestion').innerHTML = "You need to eat healthy food and do regular exercises!";
+		}
+	}
+}
+
+</script>
+
+</html>

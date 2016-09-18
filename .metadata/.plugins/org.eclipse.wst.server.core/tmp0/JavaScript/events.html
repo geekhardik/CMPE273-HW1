@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<style>
+div {
+	height: 200px;
+	width: 200px;
+	border: 1px solid black;
+}
+</style>
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Events - draw a line</title>
+
+<script type="text/javascript">
+	function coord(e) {
+		var x = e.clientX;
+		var y = e.clientY;
+		var coords = "Coordinates : (" + x + "," + y + ")";
+		document.getElementById("here").innerHTML = coords;
+
+		if (x == 100 && y == 200) {
+			document.getElementById("img").src = "https://cdn0.iconfinder.com/data/icons/targetdart/506/target-dart.png"
+			document.getElementById("here").style.visibility = "hidden";
+			document.getElementById("chnage").innerHTML = "Bingo!!";
+			document.getElementById("div").style.visibility = "hidden";
+		}
+	}
+</script>
+
+</head>
+<body>
+	<h1 id="chnage">Move over Square,get coordinates(100,200) and you
+		win!!</h1>
+	<div id="div" onmousemove="coord(event)"></div>
+	<p id="here"></p>
+	<img id="img" src="" height="300px" width="300px">
+
+
+</body>
+</html>
