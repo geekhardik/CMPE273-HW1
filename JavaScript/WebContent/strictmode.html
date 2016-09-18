@@ -1,0 +1,30 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function correct() {
+		x = 15; // x is not declared as variable!!
+		document.getElementById("here").innerHTML = x;
+	}
+
+	function incorrect() {
+		"use strict"; //using strict mode
+		y = 15;
+		document.getElementById("there").innerHTML = y;
+	}
+</script>
+</head>
+<body>
+	<h1>Illustration of Strict mode..</h1>
+	<p id="here" onclick="correct()">valid operation without using
+		strict mode. If you click on this statement, this will return you
+		result as programmed!</p>
+	<p id="there" onclick="incorrect()">Invalid. since strict mode is
+		used. it will produce an error in console. check console by pressing
+		F12.</p>
+</body>
+</html>

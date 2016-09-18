@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	function apple() {
+		var apple = [ "Get whiter, healthier teeth", "Avoid Alzheimer",
+				"Protect against Parkinson", "Curb all sorts of cancers",
+				"Decrease your risk of diabetes" ];
+
+		var x;
+		var txt = "<ul>";
+		for (x in apple) {
+			txt += "<li>" + apple[x] + "</li>";
+		}
+		txt += "</ul>";
+		document.getElementById("img").src = "http://sites.psu.edu/siowfa15/wp-content/uploads/sites/29639/2015/09/04_Apples.jpg";
+		document.getElementById("here").innerHTML = txt;
+
+	}
+
+	function kiwi() {
+		var kiwi = [
+				"Protection against Asthmah",
+				"Protection against Macular Degeneration",
+				"A Delicious Way to Enjoy Cardiovascular Health",
+				"Fiber for Blood Sugar Control Plus Cardiovascular and Colon Healths",
+				"Premier Antioxidant Protection" ];
+
+		var x;
+		var txt = "<ul>";
+		for (x in kiwi) {
+			txt += "<li>" + kiwi[x] + "</li>";
+		}
+		txt += "</ul>";
+		document.getElementById("img").src = "http://pngimg.com/upload/kiwi_PNG4029.png";
+		document.getElementById("here").innerHTML = txt;
+
+	}
+
+	function avocado() {
+		var avocado = [
+				"Avocado is Incredibly Nutritious",
+				"They Contain More Potassium Than Bananas",
+				" Avocados Are Loaded With Fiberh",
+				"Eating Avocados Can Lower Cholesterol and Triglyceride Levels",
+				"Avocado May Help Prevent Cancer" ];
+
+		var x;
+		var txt = "<ul>";
+		for (x in avocado) {
+			txt += "<li>" + avocado[x] + "</li>";
+		}
+		txt += "</ul>";
+		document.getElementById("img").src = "https://authoritynutrition.com/wp-content/uploads/2013/05/avocado.jpg";
+		document.getElementById("here").innerHTML = txt;
+
+	}
+</script>
+
+
+</head>
+<body>
+	<h1>Health Benifits of Fruits!</h1>
+	<form>
+		<input type="radio" name="fruit" value="apple" onclick="apple()">
+		apple<br> <input type="radio" name="fruit" value="kiwi"
+			onclick="kiwi()"> kiwi<br> <input type="radio"
+			name="fruit" value="avocado" onclick="avocado()"> avocado
+	</form>
+	<img id="img" src="" height="100px" width="100px">'
+	<p id="here"></p>
+</body>
+</html>

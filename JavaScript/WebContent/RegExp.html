@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function myFunction(){
+		var x = document.getElementById("email").value;
+		
+		var a = x.lastIndexOf(".");	//matches last occurence!
+		
+		var b = x.search(/@/);		//regular expression
+			
+		if((a < 0) || (b < 1) || a < b+2 || a+2 >=x.length){
+			alert("invalid email id!");
+// 			location.reload();
+			return false;
+		}else{
+			document.getElementById("here").innerHTML = "Entered email id is correct.";
+		}
+	}
+
+</script>
+
+</head>
+<body>
+	<h1>Email Id validation</h1>
+	Email :
+	<input id="email">
+	<button onclick=myFunction()>Click to validate!</button>
+	<p id="here"></p>
+</body>
+</html>

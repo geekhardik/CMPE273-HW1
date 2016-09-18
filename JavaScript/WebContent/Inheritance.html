@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<script type="text/javascript">
+		function Parentclass() {
+			this.parent_var = "parent string!";
+			this.parentmethod = function parentmethod(arg) {
+				return arg + " parent method data..";
+			}
+		}
+
+		//child
+		function Childclass() {
+			this.child_var = "child string!";
+			this.childmethod = function childmethod(arg) {
+				return arg + " child method data..";
+			}
+		}
+
+		Childclass.prototype = new Parentclass();
+
+		var obj1 = new Childclass();
+
+		// alert(obj1 instanceof Parentclass);	//RETURN TURE
+		// alert(obj1 instanceof Childclass);		//RETURN TRUE
+
+		alert(obj1.parentmethod(" child object calling "));
+		alert(obj1.childmethod(" child object calling "));
+		alert(obj1.parent_var);
+		alert(obj1.child_var);
+
+		//override parent method
+
+		Childclass.prototype.parentmethod = function parentmethod(arg) {
+			alert("Now child is overwriting into parent class method!");
+
+			return "this is amazing " + arg;
+
+		}
+
+		alert(obj1.parentmethod("program"));
+	</script>
+
+</body>
+</html>

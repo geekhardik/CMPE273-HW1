@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Local storage Example!</title>
+</head>
+<body>
+
+	Name:
+	<input type="text" id="name" value=""> Password :
+	<input id="pass" type="text">
+	<br>
+	<input type="checkbox" id="myCheck"> Do you want to save your
+	details?
+	<br>
+	<br>
+	<input type="submit" onclick="myFunction()" value="submit">
+
+	<script type="text/javascript">
+		if (localStorage.name && localStorage.pass) {
+
+			document.getElementById("name").value = localStorage.name;
+			document.getElementById("pass").value = localStorage.pass;
+		}
+		function myFunction() {
+
+			if (myCheck.checked) {
+
+				localStorage.name = document.getElementById("name").value;
+				localStorage.pass = document.getElementById("pass").value;
+
+			} else {
+
+				localStorage.clear();
+			}
+
+			alert("Now close and reopen the browser to see the script in action!");
+		}
+	</script>
+
+</body>
+</html>

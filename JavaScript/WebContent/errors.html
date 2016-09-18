@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h1>Try / catch example</h1>
+	<input id="age1" placeholder="Enter your age!">
+	<button onclick="check()">click!</button>
+	<p id="age"></p>
+
+	<script type="text/javascript">
+		function check() {
+			try {
+				var x = document.getElementById("age1").value;
+				if (isNaN(x))
+					throw "please enter only number!";
+				if (x == "")
+					throw "Input is not provided!"
+				if (x<5 && x>0)
+					throw "you're too small child to access this computer!!";
+				if (x<15 && x>5)
+					throw "Play,learn and grow up!";
+				if (x > 15)
+					throw "party hard and live with smile!";
+			} catch (err) {
+				document.getElementById("age").innerHTML = err;
+			} finally {
+				document.getElementById("age1").value = "";
+			}
+		}
+		document.getElementById("age").innerHTML = coords;
+		document.getElementById("age").innerHTML = coords;
+	</script>
+</body>
+</html>
